@@ -38,7 +38,7 @@ NEXT
 
 ## Prerequisites
 
-- [qj](https://jqlang.org/)
+- [jq](https://jqlang.org/)
 
 ## Usage
 
@@ -82,5 +82,3 @@ processes to create a branch and submit a pull request.
 Note that JSON files of future challenges do not need to contain all
 required fields of a challenge.  Indeed, these fields will
 automatically be inserted at selection time.
-
-NEXT: write script to help create challenge.
