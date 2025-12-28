@@ -99,3 +99,5 @@ jq '. += {"toto": "0+0"}' "${dst}" > "${dst}.$$" && mv "${dst}.$$" "${dst}"
     #                "The submission with the most points is the winner.  In case of tie all submissions with the maximum number of points are winners.",
     #                "Dependening on the round the winner(s) may receive prize(s) such as AUDIO tokens."]
     # },
+
+festival -b '(voice_cmu_us_slt_arctic_hts)' '(SayText '%s')'

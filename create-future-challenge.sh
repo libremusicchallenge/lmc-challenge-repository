@@ -1,5 +1,7 @@
 #!/bin/bash
 
+NEXT: help to create audio file as well
+
 # Create a future challenge JSON file from prompting the user with
 # relevant questions.
 
