@@ -38,10 +38,47 @@ NEXT
 
 ## Prerequisites
 
-- [qj](https://jqlang.org/)
+- [jq](https://jqlang.org/)
 
 ## Usage
 
 ### Randomly Select Challenge
 
-NEXT
+To select the next challenge call the following script
+
+```bash
+./randomly-select-challenge.sh
+```
+
+which will randomly select a challenge, move it to the
+[present](present) directory (after moving the present one to the
+[past](past) directory) and complete whatever JSON fields must be
+completed, such as `rules`, `prizes`, etc.  It will also rename the
+challenge file
+
+```
+<CHALLENGE>.json
+```
+
+into
+
+```
+LMC<ROUND_NUMBER> - <DATE> - <CHALLENGE NAME>.json
+```
+
+### Create Future Challenge
+
+To faciliate creating future challenges, a script is provided to walk
+the user through the process.  To do that, type the following
+
+```bash
+./create-future-challenge.sh
+```
+
+then the user is prompted to provide the challenge name, short and
+long descriptions, as well as recommended git commands and github
+processes to create a branch and submit a pull request.
+
+Note that JSON files of future challenges do not need to contain all
+required fields of a challenge.  Indeed, these fields will
+automatically be inserted at selection time.

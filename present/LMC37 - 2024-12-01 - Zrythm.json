@@ -1,0 +1,33 @@
+{
+  "short_description": "Make a track with Zrythm.",
+  "long_description": "The challenge of this round is to make a track with Zrythm.  You can use any sound source and samples and any other plugin, as long as everything is free software.  Samples must be available at no cost and under free licenses (i.e. public domain, CC0, CC-BY with appropriate attribution).  Remember to list all software and each sample used.",
+  "rules": {
+    "general": [
+      "The challenge starts on the 1st of every odd month (Jan, Mar, May, Jul, Sep, Nov) and ends on the 15th (excluded) of the follow month.",
+      "All submissions must be made with free (libre) software only.  This includes the DAW and all plugins.  A non-free operating system is allowed.",
+      "Submissions must be original work produced specifically for this context.  No covers, remakes, or remixes of existing work.",
+      "There is no song length limit.",
+      "Collaborations are allowed.",
+      "Regardless of any challenge-specific restriction on plugins, basic utility plugins are always allowed, unless specified otherwise.  These include things like Limiter, EQ and Filtering, Volume and Pan, and MIDI manipulation.",
+      "Regardless of any software restriction, you are also allowed to use any hardware device to enhance your workflow, e.g. MIDI keyboard or other controllers."
+    ],
+    "submission": [
+      "You must submit your entry before the 15th of the following month, i.e. at 11:59pm (UTC) the lastest on the 14th.",
+      "To submit you must upload your song on the Audius platform.  For that you need to have an Audius account.",
+      "On Audius, click on *Upload A Track* from the *Tracks* tab of your account, or click on *Upload Your Remix* from the song promoting the challenge for this round (aka original).",
+      "While filling out the details for your upload, open the *Remix Settings* menu.",
+      "To ensure your entry is considered, enable the *Identify as Remix* option.  Submissions that are not linked to the original will not be considered for the challenge.",
+      "Ideally, tag your song with #libremusicchallenge, among others of your choice.",
+      "Ideally, enable *Full Track Download* in the *Steams & Downloads* option."
+    ],
+    "voting": [
+      "Voting runs from the 15th to the end of the following month of the challenge.  Failure to vote in time will result in disqualification.",
+      "Voting is done by ranking 5 submissions (excluding yours) from 1st (best) to 5th (worse among the 5 best).",
+      "Participants of previous challenges are also welcome to vote, even if they have not made a submission.",
+      "5 points are attributed to the submission with the highest rank, 4 to the second, 3 to the third, 2 to the fourth and 1 to the fifth.  No points are attributed to submissions that have not been ranked.",
+      "The submission with the most points wins.  In case of ties all submissions with the maximum number of points are winners.",
+      "Dependening on the round the winner(s) may receive prize(s) such as AUDIO tokens.",
+      "To vote, write a message containing the ranking of your choice to @libremusicchallenge using the Audius platform."
+    ]
+  }
+}
