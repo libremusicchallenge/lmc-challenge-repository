@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# NEXT: complete fields that must be completed
-
 # Randomly select a challenge file from the future folder.  Move it to
 # the present folder and move the existing challenge in the present
 # folder to the past folder.
