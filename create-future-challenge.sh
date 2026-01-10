@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Create a future challenge JSON file from prompting the user with
-# relevant questions.
+# relevant questions.  If you wish to enter unicode styles you use a
+# tool such as https://crates.io/crates/markdown2unicode.
 
 #############
 # Functions #
