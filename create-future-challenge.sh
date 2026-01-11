@@ -18,6 +18,12 @@ log_info() {
     echo "[$(now)][INFO] $@"
 }
 
+# Log at ERROR level to stderr and exit
+log_error() {
+    echo "[$(now)][ERROR] $@" >&2
+    exit 1
+}
+
 ########
 # Main #
 ########
@@ -34,6 +40,18 @@ read -s short_description
 echo "Provide a long (multiple sentences) description of the challenge:"
 read -s long_description
 
-jq . <<< "{ \"short_description\": \"${short_description}\", \"long_description\": \"${long_description}\" }" > future/"${title}.json"
+# Stems
+echo "Provide a path of stems (empty means none):"
+read -s stems_path
 
-log_info "New challenge file created under the future folder: \"${title}.json\""
+if [ -n "${stems_path}" ]; then
+    if cp -r "${stems_path}" "future/${title}"; then
+        log_info "Stems folder created: \"future/${title}\""
+    else
+        log_error "Failed to create stems folder: \"future/${title}\""
+    fi
+fi
+
+jq . <<< "{ \"short_description\": \"${short_description}\", \"long_description\": \"${long_description}\", \"stems_path\": \"${title}\"}" > future/"${title}.json"
+
+log_info "New challenge file created: \"future/${title}.json\""
