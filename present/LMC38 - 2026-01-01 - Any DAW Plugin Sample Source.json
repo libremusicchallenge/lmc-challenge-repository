@@ -29,13 +29,13 @@
       "Dependening on the round the winner(s) may receive prize(s) such as AUDIO tokens.",
       "To vote, write a message containing the ranking of your choice to @libremusicchallenge using the Audius platform."
     ]
-  }
+  },
   "submissions": [
     {"artist": "MyLoFy", "track": "Tape Treasure"},
     {"artist": "amberdrake", "track": "Argent Rising"},
     {"artist": "A-Lin", "track": "Partir"},
     {"artist": "Nick The Sic", "track": "Dreams"}
-  ]
+  ],
   "votes": [
     {"1st": {"artist": "amberdrake", "track": "Argent Rising"},
      "2nd": {"artist": "MyLoFy", "track": "Tape Treasure"},
