@@ -30,4 +30,28 @@
       "To vote, write a message containing the ranking of your choice to @libremusicchallenge using the Audius platform."
     ]
   }
+  "submissions": [
+    {"artist": "MyLoFy", "track": "Tape Treasure"},
+    {"artist": "amberdrake", "track": "Argent Rising"},
+    {"artist": "A-Lin", "track": "Partir"},
+    {"artist": "Nick The Sic", "track": "Dreams"}
+  ]
+  "votes": [
+    {"1st": {"artist": "amberdrake", "track": "Argent Rising"},
+     "2nd": {"artist": "MyLoFy", "track": "Tape Treasure"},
+     "3rd": {"artist": "Nick The Sic", "track": "Dreams"}
+    },
+    {"1st": {"artist": "A-Lin", "track": "Partir"},
+     "2nd": {"artist": "MyLoFy", "track": "Tape Treasure"},
+     "3rd": {"artist": "amberdrake", "track": "Argent Rising"}
+    },
+    {"1st": {"artist": "MyLoFy", "track": "Tape Treasure"},
+     "2nd": {"artist": "A-Lin", "track": "Partir"},
+     "3rd": {"artist": "Nick The Sic", "track": "Dreams"}
+    },
+    {"1st": {"artist": "A-Lin", "track": "Partir"},
+     "2nd": {"artist": "amberdrake", "track": "Argent Rising"},
+     "3rd": {"artist": "Nick The Sic", "track": "Dreams"}
+    }
+  ]
 }
