@@ -1,5 +1,0 @@
-{
-  "short_description": "The challenge for this round is to make a track using only the JS80P.",
-  "long_description": "The JS80P by Attila M. Magyar, which can be found at https://attilammagyar.github.io/js80p/, is a softsynth inspired by the Yamaha CS-80.  It is a free and open source synthesizer VST plugin for Linux and Windows (no Mac), with two oscillators, filters, effects, envelopes, LFOs and macros to shape your sound with subtractive, additive, FM, PM, and AM synthesis.  Your challenge for this round is to make a track using 𝐨𝐧𝐥𝐲 𝐭𝐡𝐞 𝐉𝐒𝟖𝟎𝐏.  You can use as many instances of the JS80P as you like, with any effect and any DAW as long as they are 𝐟𝐫𝐞𝐞 𝐚𝐧𝐝 𝐨𝐩𝐞𝐧 𝐬𝐨𝐮𝐫𝐜𝐞.  The JS80P comes with over 50 presets but none ressembling drums, however by fiddling a bit with it I was able to make a HiHat so it should cover your needs if you are sufficiently skilled in the art of designing your own presets.  If you are not, feel free to ask around for help.",
-  "stems_path": ""
-}
