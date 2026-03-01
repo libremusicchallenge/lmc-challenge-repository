@@ -67,3 +67,5 @@ for i in ${!lst_5th[@]}; do
 done
 echo "${entry_to_score[@]}"
 echo "${!entry_to_score[@]}"
+
+# NEXT: automatically populate present json file with scores
