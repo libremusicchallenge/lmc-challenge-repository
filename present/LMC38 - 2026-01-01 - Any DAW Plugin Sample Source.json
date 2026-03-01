@@ -53,5 +53,11 @@
      "2nd": {"artist": "amberdrake", "track": "Argent Rising"},
      "3rd": {"artist": "Nick The Sic", "track": "Dreams"}
     }
-  ]
+  ],
+  "scores": [
+    {"artist": "A-Lin", "track": "Partir", "score": 14},
+    {"artist": "MyLoFy", "track": "Tape Treasure", "score": 13},
+    {"artist": "amberdrake", "track": "Argent Rising", "score": 12},
+    {"artist": "Nick The Sic", "track": "Dreams", "score": 9}
+  ],
 }
