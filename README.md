@@ -91,6 +91,15 @@ into
 LMC<ROUND_NUMBER> - <DATE> - <CHALLENGE NAME>.json
 ```
 
+### Render Present Challenge Annoucement
+
+To render the annoucement of the present challenge in text format
+ready to be used, invoke the following command
+
+```bash
+./render-present-challenge-annoucement.sh
+```
+
 ### Produce Challenge Artwork
 
 To produce the artwork of the present challenge (the LMC logo

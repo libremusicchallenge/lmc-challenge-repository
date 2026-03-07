@@ -54,6 +54,6 @@ if [ -n "${stems_path}" ]; then
     fi
 fi
 
-jq . <<< "{ \"short_description\": \"${short_description}\", \"long_description\": \"${long_description}\", \"stems_path\": \"${stems_path_dst}\"}" > future/"${title}.json"
+jq . <<< "{ \"title\": \"${title}\", \"short_description\": \"${short_description}\", \"long_description\": \"${long_description}\", \"stems_path\": \"${stems_path_dst}\"}" > future/"${title}.json"
 
 log_info "New challenge file created: \"future/${title}.json\""

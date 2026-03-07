@@ -29,8 +29,8 @@ log_error() {
     exit 1
 }
 
-# Extract LMC INDEX of present challenge given its filename.
-get_previous_lmcidx() {
+# Extract LMC INDEX of a challenge given its filename.
+get_lmc_idx() {
     sed 's/LMC\([0-9]\+\).*/\1/g' <<< "$1"
 }
 
@@ -55,8 +55,8 @@ if [[ 1 -ne ${nbr_present_challenges} ]]; then
 fi
 present_challenge=$(ls present/LMC*.json)
 present_challenge_base=$(basename "${present_challenge}")
-previous_lmcidx=$(get_previous_lmcidx "${present_challenge_base}")
-lmcidx=$((previous_lmcidx + 1))
+previous_lmc_idx=$(get_lmc_idx "${present_challenge_base}")
+lmc_idx=$((previous_lmc_idx + 1))
 
 # Move existing present challenge to past
 log_info "Move previous challenge \"${present_challenge}\" to the past folder"
@@ -67,7 +67,7 @@ i=0
 for f in future/*; do
     f_base=$(basename "${f}")
     if [[ $i -eq $rnd_challenge ]]; then
-        dst="present/LMC${lmcidx} - ${today_date} - ${f_base}"
+        dst="present/LMC${lmc_idx} - ${today_date} - ${f_base}"
         mv "${f}" "${dst}"
         iplusone=$((i + 1))
         log_info "Select challenge \"${f}\" and move it to \"${dst}\""
@@ -75,6 +75,8 @@ for f in future/*; do
     i=$((i + 1))
 done
 
+# Complete challenge with round, start date and end date
+# NEXT
 # Complete challenge with general fields
 log_info "Complete \"$dst\" with general fields"
 jq '. += {"rules": {}}' "${dst}" > "${dst}.$$" && mv "${dst}.$$" "${dst}"
