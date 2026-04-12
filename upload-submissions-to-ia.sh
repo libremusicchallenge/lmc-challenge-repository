@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# set -x
+
 # Upload submissions to the Internet Archive assuming the
 # corresponding files are in the current directory with the following
 # format
@@ -31,7 +33,7 @@ log_error() {
 }
 
 # Extract LMC round index of a challenge given its file path
-get_lmc_idx() {
+get_lmc_round() {
     jq ".round" "$1"
 }
 
@@ -45,14 +47,23 @@ get_lmc_url() {
     jq -r ".url" "$1"
 }
 
+# Extract start of a challenge given its file path
+get_lmc_start_date() {
+    jq -r ".start_date" "$1"
+}
+
 # Get present submission filenames
 get_submission_filenames() {
     NEXT
 }
 
-# Get present challenge description
+# Get description for the Internet Archive of a given challenge (given
+# its JSON file)
 get_description() {
-    NEXT
+    local start_date=$(get_lmc_start_date "$1")
+    local start_year=$(date -d "$start_date" +%Y)
+    local start_month=$(date -d "$start_date" +%B)
+    echo "Submission for the Libre Music Challenge #$(get_lmc_round "$1"): \"$(get_lmc_title "$1")\", $start_month $start_year.\n\nMore info about the challenge at: $(get_lmc_url "$1")\n"
 }
 
 ########
@@ -60,9 +71,9 @@ get_description() {
 ########
 
 present_challenge=$(ls present/LMC*.json)
-round=$(get_lmc_idx "${present_challenge}")
+round=$(get_lmc_round "${present_challenge}")
 submissions=($(get_submission_filenames))
-description=$(get_description)
+description=$(get_description "$present_challenge")
 date=$(now)
 identifier=libre-music-challenge-${round}
 ia upload ${identifier} "${submissions[@]}" \
