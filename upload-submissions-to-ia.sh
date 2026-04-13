@@ -52,9 +52,9 @@ get_lmc_start_date() {
     jq -r ".start_date" "$1"
 }
 
-# Get present submission filenames
+# Get submission filenames of a given challenge (given its JSON file)
 get_submission_filenames() {
-    NEXT
+    jq -r '.submissions[] | "\(.artist) - \(.track).flac"' "$1"
 }
 
 # Get description for the Internet Archive of a given challenge (given
@@ -72,7 +72,7 @@ get_description() {
 
 present_challenge=$(ls present/LMC*.json)
 round=$(get_lmc_round "${present_challenge}")
-submissions=($(get_submission_filenames))
+mapfile -t submissions < <(get_submission_filenames "$present_challenge")
 description=$(get_description "$present_challenge")
 date=$(now)
 identifier=libre-music-challenge-${round}
