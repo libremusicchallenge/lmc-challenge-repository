@@ -84,3 +84,4 @@ ia upload ${identifier} "${submissions[@]}" \
    --metadata="subject:libre music challenge" \
    --metadata="title:Libre Music Challenge #${round}" \
    --metadata="date:${date}"
+log_info "LMC#${round} uploaded to the Internet Archive.  See https://archive.org/details/libre-music-challenge-${round}"
