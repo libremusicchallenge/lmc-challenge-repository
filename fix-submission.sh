@@ -70,11 +70,14 @@ if [[ -z "$dst" ]]; then
 fi
 
 # Convert to FLAC if needed
-if [[ "$src_ext" != flac ]]; then
-    log_info "Convert \"$src\" into \"$dst\""
-    ffmpeg -i "$src" "$dst" &> /dev/null
+log_info "Convert \"$src\" to \"$dst\""
+ffmpeg -i "$src" "$dst" &> /dev/null
+if [[ "$src" != "$dst" ]]; then
     rm "$src"
-else
-    log_info "Rename \"$src\" into \"$dst\""
-    mv "$src" "$dst"
 fi
+
+# Normalize
+ndst="Normalized - $dst"
+log_info "Normalize \"$dst\""
+sox "$dst" "$ndst" gain -n
+mv "$ndst" "$dst"
