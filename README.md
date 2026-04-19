@@ -39,6 +39,7 @@ NEXT
 ## Prerequisites
 
 - [jq](https://jqlang.org/)
+- [ia](https://archive.org/developers/internetarchive/cli.html)
 - [rustup](https://rustup.rs/)
 - [markdown2unicode](https://github.com/qtfkwk/markdown2unicode), do the following
   ```bash
@@ -117,3 +118,51 @@ lmc-round-ROUND-artwork.gif
 ```
 
 where ROUND is the round number of the present challenge.
+
+### Upload to the Internet Archive
+
+#### Configure
+
+Before you can upload you need to configure your ia client.  For that
+run the following command
+
+```bash
+ia configure
+```
+
+Follow the instructions (you can likely use credentials of the Libre
+Music Challenge Internet Archive account).  At the end it should
+create an `ia.ini` file under (from your home directory)
+
+```
+.config/internetarchive
+```
+
+containing the access and the secret keys.
+
+#### Upload Present Round
+
+To upload the submissions to the Internet Archive run the following
+script
+
+```bash
+./upload-submissions-to-ia.sh
+```
+
+assuming that the submissions are under the current folder and are
+formatted as follows:
+
+```
+AUTHOR - TITLE.flac
+```
+
+#### Download Metadata from Previous Rounds
+
+It may be helpful to download metadata from existing rounds to
+understand how it is structured.  For instance
+
+```bash
+ia metadata libre-music-challenge-33 | jq
+```
+
+downloads metadata in JSON format of LMC#33.
