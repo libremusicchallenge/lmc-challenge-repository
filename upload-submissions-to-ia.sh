@@ -63,7 +63,7 @@ get_description() {
     local start_date=$(get_lmc_start_date "$1")
     local start_year=$(date -d "$start_date" +%Y)
     local start_month=$(date -d "$start_date" +%B)
-    echo "Submission for the Libre Music Challenge #$(get_lmc_round "$1"): \"$(get_lmc_title "$1")\", $start_month $start_year.\n\nMore info about the challenge at: $(get_lmc_url "$1")\n"
+    echo "Submission for the Libre Music Challenge #$(get_lmc_round "$1"): \"$(get_lmc_title "$1")\", $start_month $start_year.  More info about the challenge at: $(get_lmc_url "$1")"
 }
 
 ########
