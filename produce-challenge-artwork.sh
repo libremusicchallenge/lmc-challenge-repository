@@ -3,20 +3,11 @@
 # Produce challenge artwork, the LMC logo overlayed with the round
 # number.  The logo is passed in argument of the command.
 
+source common.sh
+
 #############
 # Functions #
 #############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
 
 # Extract LMC INDEX of present challenge given its filename.
 get_present_lmcidx() {

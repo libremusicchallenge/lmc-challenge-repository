@@ -2,25 +2,12 @@
 
 # Fix submission, like properly rename it, encode it in the FLAC, etc.
 
+# Source common.sh
+source common.sh
+
 #############
 # Functions #
 #############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at INFO level to stdout
-log_info() {
-    echo "[$(now)][INFO] $@"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
 
 # Get submission filenames of a given challenge, given its JSON file
 get_submission_filenames() {
@@ -48,6 +35,7 @@ if [[ $# -eq 1 ]]; then
 else
     echo "Error: expect submission.  Usage is"
     echo "$0 SUBMISSION"
+    exit 1
 fi
 
 # Split into name and extension

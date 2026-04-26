@@ -2,25 +2,8 @@
 
 # Add submissions to present challenge
 
-#############
-# Functions #
-#############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at INFO level to stdout
-log_info() {
-    echo "[$(now)][INFO] $@"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
+# Source common.sh
+source common.sh
 
 ########
 # Main #

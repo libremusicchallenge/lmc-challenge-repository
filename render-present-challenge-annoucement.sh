@@ -2,6 +2,8 @@
 
 # Render present challenge annoucement in text format.
 
+source common.sh
+
 #############
 # Functions #
 #############

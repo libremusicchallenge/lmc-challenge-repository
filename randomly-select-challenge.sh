@@ -4,30 +4,11 @@
 # the present folder and move the existing challenge in the present
 # folder to the past folder.
 
+source common.sh
+
 #############
 # Functions #
 #############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at INFO level to stdout
-log_info() {
-    echo "[$(now)][INFO] $@"
-}
-
-# Log at DEBUG level to stdout
-log_debug() {
-    echo "[$(now)][DEBUG] $@"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
 
 # Extract LMC INDEX of a challenge given its filename.
 get_lmc_idx() {
