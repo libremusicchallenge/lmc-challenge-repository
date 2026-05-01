@@ -166,3 +166,25 @@ ia metadata libre-music-challenge-33 | jq
 ```
 
 downloads metadata in JSON format of LMC#33.
+
+### Parse Ranking
+
+In order to calculate the final scores, the votes of each participants
+must be added to the JSON file of the present challenge.  For that use
+the script
+
+```
+./parse-ranking.sh RANKING_FILEPATH
+```
+
+where `RANKING_FILEPATH` is a file expected to contain the following
+format
+
+```
+1st: Artist1 - Title1
+2nd: Artist2 - Title2
+...
+```
+
+The script will try to handle slight variations of this format though,
+if it fails you will have to fix manually.
