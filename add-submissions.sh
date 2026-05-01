@@ -31,7 +31,7 @@ while true; do
 done
 
 # Add this information in present challenge JSON file
-present_challenge=$(ls present/LMC*.json)
+present_challenge="$(get_present_challenge)"
 for i in "${!artists[@]}"; do
     a="${artists[i]}"
     t="${tracks[i]:-}"

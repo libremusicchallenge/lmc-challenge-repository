@@ -6,15 +6,6 @@
 
 source common.sh
 
-#############
-# Functions #
-#############
-
-# Extract LMC INDEX of a challenge given its filename.
-get_lmc_idx() {
-    sed 's/LMC\([0-9]\+\).*/\1/g' <<< "$1"
-}
-
 ########
 # Main #
 ########
@@ -30,12 +21,12 @@ rnd_challenge=$((RANDOM % ${nbr_challenges}))
 today_date=$(date +%F)
 
 # Calculate next round index
-nbr_present_challenges=$(ls present/LMC*.json | wc -l)
+nbr_present_challenges=$(get_present_challenge | wc -l)
 if [[ 1 -ne ${nbr_present_challenges} ]]; then
     log_error "There is not exactly one challenge in the present folder.  Please clean up the folder."
 fi
-present_challenge=$(ls present/LMC*.json)
-present_challenge_base=$(basename "${present_challenge}")
+present_challenge="$(get_present_challenge)"
+present_challenge_base="$(basename "${present_challenge}")"
 previous_lmc_idx=$(get_lmc_idx "${present_challenge_base}")
 lmc_idx=$((previous_lmc_idx + 1))
 

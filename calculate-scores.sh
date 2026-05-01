@@ -12,13 +12,14 @@ source common.sh
 # Declare associative array mapping entries to scores
 declare -A entry_to_score
 
-present_challenge=$(ls present/LMC*.json)
+present_challenge="$(get_present_challenge)"
+echo "$present_challenge"
 jq '.votes' "${present_challenge}"
 
 # NEXT: have this being automatically filled by jq
-lst_1st=("amberdrake" "A-Lin" "MyLoFy" "A-Lin")
-lst_2nd=("MyLoFy" "MyLoFy" "A-Lin" "amberdrake")
-lst_3rd=("Nick The Sic" "amberdrake" "Nick The Sic" "Nick The Sic")
+lst_1st=("sg75" "sg75" "RobinDe")
+lst_2nd=("Amberdrake" "RobinDe" "A-Lin")
+lst_3rd=("RobinDe" "A-Lin" "Amberdrake")
 lst_4th=()
 lst_5th=()
 

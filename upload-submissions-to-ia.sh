@@ -14,31 +14,6 @@ source common.sh
 # Functions #
 #############
 
-# Extract LMC round index of a challenge given its file path
-get_lmc_round() {
-    jq ".round" "$1"
-}
-
-# Extract title of a challenge given its file path
-get_lmc_title() {
-    jq -r ".title" "$1"
-}
-
-# Extract url of a challenge given its file path
-get_lmc_url() {
-    jq -r ".url" "$1"
-}
-
-# Extract start of a challenge given its file path
-get_lmc_start_date() {
-    jq -r ".start_date" "$1"
-}
-
-# Get submission filenames of a given challenge (given its JSON file)
-get_submission_filenames() {
-    jq -r '.submissions[] | "\(.artist) - \(.track).flac"' "$1"
-}
-
 # Get description for the Internet Archive of a given challenge (given
 # its JSON file)
 get_description() {

@@ -9,23 +9,6 @@ source common.sh
 # Functions #
 #############
 
-# Get submission filenames of a given challenge, given its JSON file
-get_submission_filenames() {
-    jq -r '.submissions[] | "\(.artist) - \(.track).flac"' "$1"
-}
-
-# Get submission artist names of a given challenge, given its JSON
-# file.
-get_submission_artists() {
-    jq -r '.submissions[] | "\(.artist)"' "$1"
-}
-
-# Get submission track titles of a given challenge, given its JSON
-# file.
-get_submission_tracks() {
-    jq -r '.submissions[] | "\(.track)"' "$1"
-}
-
 ########
 # Main #
 ########
@@ -43,7 +26,7 @@ src_ext="${src##*.}"
 src_name="$(basename "$src" ".$src_ext")"
 
 # Fix name
-present_challenge=$(ls present/LMC*.json)
+present_challenge="$(get_present_challenge)"
 mapfile -t artists < <(get_submission_artists "$present_challenge")
 mapfile -t tracks < <(get_submission_tracks "$present_challenge")
 mapfile -t submissions < <(get_submission_filenames "$present_challenge")
