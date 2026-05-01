@@ -17,9 +17,9 @@ echo "$present_challenge"
 jq '.votes' "${present_challenge}"
 
 # NEXT: have this being automatically filled by jq
-lst_1st=("sg75" "sg75" "RobinDe")
-lst_2nd=("Amberdrake" "RobinDe" "A-Lin")
-lst_3rd=("RobinDe" "A-Lin" "Amberdrake")
+lst_1st=("sg75" "sg75" "RobinDe" "Amberdrake")
+lst_2nd=("Amberdrake" "RobinDe" "A-Lin" "sg75")
+lst_3rd=("RobinDe" "A-Lin" "Amberdrake" "A-Lin")
 lst_4th=()
 lst_5th=()
 
