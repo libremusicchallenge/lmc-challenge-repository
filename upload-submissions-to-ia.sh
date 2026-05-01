@@ -8,54 +8,11 @@
 #
 # AUTHOR - TITLE.flac
 
-#############
-# Constants #
-#############
+source common.sh
 
 #############
 # Functions #
 #############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at INFO level to stdout
-log_info() {
-    echo "[$(now)][INFO] $@"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
-
-# Extract LMC round index of a challenge given its file path
-get_lmc_round() {
-    jq ".round" "$1"
-}
-
-# Extract title of a challenge given its file path
-get_lmc_title() {
-    jq -r ".title" "$1"
-}
-
-# Extract url of a challenge given its file path
-get_lmc_url() {
-    jq -r ".url" "$1"
-}
-
-# Extract start of a challenge given its file path
-get_lmc_start_date() {
-    jq -r ".start_date" "$1"
-}
-
-# Get submission filenames of a given challenge (given its JSON file)
-get_submission_filenames() {
-    jq -r '.submissions[] | "\(.artist) - \(.track).flac"' "$1"
-}
 
 # Get description for the Internet Archive of a given challenge (given
 # its JSON file)

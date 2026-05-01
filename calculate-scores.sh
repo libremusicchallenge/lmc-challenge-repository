@@ -2,30 +2,8 @@
 
 # Aggregates the votes of the participants to calculate their scores.
 
-#############
-# Functions #
-#############
-
-# Output now's data and time
-now() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
-# Log at INFO level to stdout
-log_info() {
-    echo "[$(now)][INFO] $@"
-}
-
-# Log at DEBUG level to stdout
-log_debug() {
-    echo "[$(now)][DEBUG] $@"
-}
-
-# Log at ERROR level to stderr and exit
-log_error() {
-    echo "[$(now)][ERROR] $@" >&2
-    exit 1
-}
+# Source common.sh
+source common.sh
 
 ########
 # Main #
@@ -34,13 +12,14 @@ log_error() {
 # Declare associative array mapping entries to scores
 declare -A entry_to_score
 
-present_challenge=$(ls present/LMC*.json)
+present_challenge="$(get_present_challenge)"
+echo "$present_challenge"
 jq '.votes' "${present_challenge}"
 
 # NEXT: have this being automatically filled by jq
-lst_1st=("amberdrake" "A-Lin" "MyLoFy" "A-Lin")
-lst_2nd=("MyLoFy" "MyLoFy" "A-Lin" "amberdrake")
-lst_3rd=("Nick The Sic" "amberdrake" "Nick The Sic" "Nick The Sic")
+lst_1st=("sg75" "sg75" "RobinDe")
+lst_2nd=("Amberdrake" "RobinDe" "A-Lin")
+lst_3rd=("RobinDe" "A-Lin" "Amberdrake")
 lst_4th=()
 lst_5th=()
 
