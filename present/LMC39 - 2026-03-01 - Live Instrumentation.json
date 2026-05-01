@@ -53,5 +53,49 @@
       "artist": "sg75",
       "track": "Buzzing"
     }
+  ],
+  "votes": [
+    {
+      "1": {
+        "artist": "sg75",
+        "track": "Buzzing"
+      },
+      "2": {
+        "artist": "Amberdrake",
+        "track": "Nightsailors"
+      },
+      "3": {
+        "artist": "RobinDe",
+        "track": "Prisoners of Chance"
+      }
+    },
+    {
+      "1th": {
+        "artist": "sg75",
+        "track": "Buzzing"
+      },
+      "2nd": {
+        "artist": "RobinDe",
+        "track": "Prisoners of Chance"
+      },
+      "3rd": {
+        "artist": "A-Lin",
+        "track": "Rollback"
+      }
+    },
+    {
+      "1th": {
+        "artist": "RobinDe",
+        "track": "Prisoners of Chance"
+      },
+      "2nd": {
+        "artist": "A-Lin",
+        "track": "Rollback"
+      },
+      "3rd": {
+        "artist": "Amberdrake",
+        "track": "Nightsailors"
+      }
+    }
   ]
 }
